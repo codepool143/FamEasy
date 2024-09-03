@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmEasy - YieldShare</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B00',
+                        secondary: '#4CAF50',
+                        lightGray: '#f7f7f7',
+                        darkGray: '#333333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Ensure that the menu is hidden initially */
+        #mobileMenu {
+            display: none;
+        }
+        @font-face {
+            font-family: oswald;
+            src: url(fonts/Oswald-Bold.ttf);
+        }
+        @font-face {
+            font-family: playit;
+            src: url(fonts/PlayfairDisplay-BoldItalic.ttf);
+        }
+        @font-face {
+            font-family: playbl;
+            src: url(fonts/PlayfairDisplay-Black.ttf);
+        }
+        @font-face {
+            font-family:inter ;
+            src: url(fonts/Inter_18pt-SemiBold.ttf);
+        }
+        @font-face {
+            font-family:pop ;
+            src: url(fonts/Poppins-ExtraBold.ttf);
+        }
+        @font-face {
+            font-family:interit ;
+            src: url(fonts/Inter_18pt-SemiBoldItalic.ttf);
+        }
+        @font-face {
+            font-family: play;
+            src: url(fonts/PlayfairDisplay-Bold.ttf);
+        }
+        h2 {
+            font-family: "pop",sans-serif;
+        }
+        .hero {
+            position: relative;
+        }
+        
+        .hero_text {
+            width: 50%;
+            height: 76%;
+            z-index: 100;
+            position: absolute;
+            top: 16%;
+            left: 34%;
+            object-fit: contain;
+        }
+        
+        .hero_btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            gap: 50%;
+            bottom: 29%;
+            left: 46%;
+            right: 27%;
+        }
+        
+        .hero_btn a {
+            z-index: 101;
+            padding: 0px 2vw;
+            font-size: 2.4vw;
+            border-radius: 11px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        
+        /* Extra responsiveness for mobile screens */
+        @media (max-width: 480px) {
+            .hero_text {
+                width: 70%;
+                height: 60%;
+                top: 25%;
+                left: 24%;
+            }
+        
+            .hero_btn {
+                bottom: 28%;
+                left: 40%;
+                right: 17%;
+                gap: 26%;
+            }
+        
+            .hero_btn a {
+                padding: 0px 9%;
+                font-size: 1rem;
+                border-radius: 11px;
+            }
+        }
+        
+        
+    </style>
+</head>
+<body class="bg-white text-darkGray" data-aos="fade-in">
+    <header class="bg-lightGray p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl" style="font-family: pop, sans-serif;">
+                <span class="text-primary">Farm</span><span class="text-secondary">Easy</span>
+            </h1>
+            <!-- Hamburger button for mobile -->
+            <div class="md:hidden">
+                <button id="hamburgerButton" class="text-darkGray focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Desktop menu -->
+            <nav class="hidden md:flex space-x-4" style="font-family: play, sans-serif;">
+                <a href="#" class="text-darkGray hover:text-primary">Sign in</a>
+                <a href="#" class="text-darkGray hover:text-primary">Browse Products</a>
+                <a href="#" class="text-darkGray hover:text-primary">About Us</a>
+                <a href="#" class="text-darkGray hover:text-primary">Contact Us</a>
+            </nav>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden mt-4">
+            <nav class="space-y-2">
+                <a href="#" class="block text-darkGray hover:text-primary">Sign in</a>
+                <a href="#" class="block text-darkGray hover:text-primary">Browse Products</a>
+                <a href="#" class="block text-darkGray hover:text-primary">About Us</a>
+                <a href="#" class="block text-darkGray hover:text-primary">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section>
+        <div class="hero relative w-full h-[25vh] md:h-[70vh] lg:h-[80vh] xl:h-[80vh] overflow-hidden bg-lightGray p-4 rounded-lg shadow text-center">
+            <img src="Images/hero.jpg" 
+                 alt="Hero image of a farm" 
+                 class="absolute inset-0 w-full h-full object-cover object-center" data-aos="fade-up">
+                 <img class="hero_text" src="Images/hero_text.png" alt="text of hero Image">
+                 <div class="hero_btn">
+                     <a href="categ.html" class="bg-primary hover:bg-opacity-80 text-white font-bold rounded" style="font-family: oswald;">
+                         BUY
+                     </a>
+                        <a class="bg-primary hover:bg-opacity-80 text-white font-bold rounded" style="font-family: oswald;">
+                            SELL
+                        </a>
+                    </div>
+
+        </div>
+    </section>
+
+    <main class="container mx-auto px-4">
+        <section class="my-8">
+            <div class="bg-lightGray p-4 rounded-lg shadow text-center" data-aos="fade-up">
+                <h2 class="text-3xl font-bold">YieldShare</h2>
+                <p class="text-2xl" style="font-family: playit, sans-serif;">"Empowering Farmers and Traders with Fair Deals"</p>
+                <div class="space-y-4 mb-2">
+                    <ul class="text-center" style="font-family: play, sans-serif;">
+                        <li class="font-bold text-xl" style="font-family: playbl, sans-serif;">Key Benefits</li>
+                        <li>Stability for both farmers and traders.</li>
+                        <li>Seamless transactions without intermediaries.</li>
+                        <li>Strengthening relationships within the agricultural community.</li>
+                    </ul>
+                </div>
+                <button class="bg-primary hover:bg-opacity-80 text-white font-bold py-1 px-2 rounded" style="font-family: oswald;">
+                    LEARN MORE
+                </button>
+            </div>
+        </section>
+
+        <section class="my-8">
+            <h2 class="text-2xl font-bold text-center mb-4" data-aos="fade-up">Our Goals</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3" style="font-family: play, sans-serif;">
+                <div class="bg-lightGray p-4 rounded-lg shadow" data-aos="zoom-in">
+                    <img src="Images/goal1.jpeg" alt="Goal 1" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p class="text-center">Sustainable Farming Practices</p>
+                </div>
+                <div class="bg-lightGray p-4 rounded-lg shadow" data-aos="zoom-in">
+                    <img src="Images/goal2.webp" alt="Goal 2" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p class="text-center">Fair Market Access</p>
+                </div>
+                <div class="bg-lightGray p-4 rounded-lg shadow" data-aos="zoom-in">
+                    <img src="Images/goal3.jpg" alt="Goal 3" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <p class="text-center">Technological Innovation</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Initialize AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // JavaScript for the hamburger menu functionality
+        const hamburgerButton = document.getElementById('hamburgerButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        hamburgerButton.addEventListener('click', () => {
+            if (mobileMenu.style.display === "none" || mobileMenu.style.display === "") {
+                mobileMenu.style.display = "block";
+            } else {
+                mobileMenu.style.display = "none";
+            }
+        });
+    </script>
+       
+
+    
+</body>
+</html>
